@@ -11,7 +11,7 @@ function App() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">  
+      <Stack.Navigator initialRouteName="Home" screenOptions={{ headerShown: false }}>  
         <Stack.Screen name="MainStack" component={MainStackComponent} />
       </Stack.Navigator>
     </NavigationContainer>

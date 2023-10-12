@@ -1,32 +1,14 @@
-import React, { useCallback, useMemo } from 'react';
+import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import BottomSheet from '@gorhom/bottom-sheet';
+import AddDateBS from '../components/Home/SearchFormBS';
+import Header from '../components/reusable/Header';
 
 const HomeScreen = () => {
-  // ref
-  const bottomSheetRef = React.createRef();
-
-  // variables
-  const snapPoints = useMemo(() => ['25%', '50%'], []);
-
-  // callbacks
-  const handleSheetChanges = useCallback((index) => {
-    console.log('handleSheetChanges', index);
-  }, []);
-
-  // renders
   return (
     <View style={styles.container}>
-      <BottomSheet
-        ref={bottomSheetRef}
-        index={1}
-        snapPoints={snapPoints}
-        onChange={handleSheetChanges}
-      >
-        <View style={styles.contentContainer}>
-          <Text>Bievenue sur Unlock 🎉</Text>
-        </View>
-      </BottomSheet>
+      <Header/>
+      <Text>Salut à tous c unloc</Text>
+      <AddDateBS/>
     </View>
   );
 };
@@ -34,8 +16,7 @@ const HomeScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 24,
-    backgroundColor: 'grey',
+    backgroundColor: 'white',
   },
   contentContainer: {
     flex: 1,
