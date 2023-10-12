@@ -7,7 +7,7 @@ export default function MainStackComponent() {
     const MainNavigation = createNativeStackNavigator();
     
     return (
-        <MainNavigation.Navigator initialRouteName="Accueil" screenOptions={{ headerShown: false }}>
+        <MainNavigation.Navigator initialRouteName="HomeScreen" screenOptions={{ headerShown: false }}>
             <MainNavigation.Screen name="HomeScreen" component={HomeScreen} />
             <MainNavigation.Screen name="Details" component={ResultScreen} />
         </MainNavigation.Navigator>
