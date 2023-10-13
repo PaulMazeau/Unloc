@@ -1,13 +1,19 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Button } from 'react-native';
 import AddDateBS from '../components/Home/SearchFormBS';
 import Header from '../components/reusable/Header';
+import { useNavigation } from '@react-navigation/native';
+
 
 const HomeScreen = () => {
+
+  const navigation = useNavigation();
+
   return (
     <View style={styles.container}>
       <Header/>
       <Text>Salut à tous c unloc</Text>
+      <Button title='Aller sur la page stud' onPress={() => {navigation.navigate('Details')}}/>
       <AddDateBS/>
     </View>
   );
