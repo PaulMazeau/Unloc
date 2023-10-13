@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
 import { BottomSheetModal, BottomSheetModalProvider } from '@gorhom/bottom-sheet';
+import SearchFormCalendar from './SearchFormCalendar';
 
 const SearchForm = () => {
     const [step, setStep] = useState(1);
@@ -26,10 +27,7 @@ const SearchForm = () => {
   
         {step === 2 && (
           <View>
-            <Text>Étape 2</Text>
-            {/* Votre formulaire pour l'étape 2 ici */}
-            <Button title="Précédent" onPress={previousStep} />
-            <Button title="Suivant" onPress={nextStep} />
+            <SearchFormCalendar nextStep={nextStep} previousStep={previousStep} />
           </View>
         )}
   
