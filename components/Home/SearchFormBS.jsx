@@ -2,6 +2,7 @@ import React, { useState, useCallback, useRef, useContext } from 'react';
 import { StyleSheet, View, Text, TextInput, TouchableOpacity, Dimensions} from 'react-native';
 import { BottomSheetBackdrop, BottomSheetModal, BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 import SearchForm from './SearchForm';
+import OpenBottomSheetButton from '../reusable/OpenBottomSheetButton';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -41,15 +42,13 @@ const AddListeCourseBS = () => {
   return (
     <BottomSheetModalProvider>
     <View style={styles.container}>
-      <TouchableOpacity onPress={openBottomSheet} style={styles.addButton}>
-        <Text>Chercher un studio</Text>
-      </TouchableOpacity>
-
+      <OpenBottomSheetButton onPress={openBottomSheet} /> 
       <BottomSheetModal
         ref={bottomSheetRef}
         snapPoints={['65%']}
         index={0}
         backdropComponent={renderBackdrop}
+        handleComponent={null}
       >
         <SearchForm/>
       </BottomSheetModal>
@@ -61,73 +60,6 @@ const AddListeCourseBS = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-  },
-  addButton: {
-    height: 40,
-    justifyContent:'center',
-    alignItems: 'center',
-    backgroundColor: 'red',
-    width: '90%',
-    marginHorizontal: '5%',
-    borderRadius: 8,
-  },
-  contentContainer: {
-    backgroundColor: 'white',
-    width: '96%',
-    marginHorizontal: '2%',
-    borderRadius: 35,
-    marginBottom: 16,
-    justifyContent: 'space-between',
-  },
-  title: {
-    textAlign: 'center',
-    fontSize: 20,
-    fontWeight: '600',
-    marginBottom: 10,
-  },
-  subTitle: {
-    marginLeft: 16,
-    fontSize: 16,
-    fontWeight: '500',
-  },
-  inputContainer: {
-    marginTop: 15,
-  },
-  input: {
-    height: 44,
-    marginTop: 13,
-    marginLeft: 10,
-    marginRight: 10,
-    borderWidth: 1,
-    borderColor: '#DDDDDD',
-    padding: 10,
-    borderRadius: 14,
-  },
-  participant: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginLeft: 10,
-    marginRight: 10,
-    marginTop:10
-  },
-  participantContainer: {
-    flexGrow: 1,
-  },
-  add: {
-    backgroundColor: '#172ACE',
-    height: 56,
-    borderRadius: 13,
-    marginTop: 20,
-    marginLeft: 10,
-    marginRight: 10,
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexDirection: 'row',
-    marginBottom: 16,
-  },
-  buttonText: {
-    color: 'white',
-    marginLeft: 15,
   },
 });
 

@@ -29,7 +29,6 @@ const Header = ({ onProfilePress, onSettingsPress }) => {
 
 const styles = StyleSheet.create({
     safeArea: {
-        backgroundColor: '#00000000', 
         paddingBottom: Platform.OS === 'android' ? 25 : -25
     },
   container: {
@@ -37,7 +36,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: 10,
-    backgroundColor: 'white',
   },
   logo: {
     width: 100,

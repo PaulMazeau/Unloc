@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
-import { BottomSheetModal, BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 import SearchFormCalendar from './SearchFormCalendar';
 
 const SearchForm = () => {
@@ -16,7 +15,7 @@ const SearchForm = () => {
     };
   
     return (
-      <View style={{ flex: 1 }}>
+      <View style={styles.container}>
         {step === 1 && (
           <View>
             <Text>Étape 1</Text>
@@ -42,5 +41,14 @@ const SearchForm = () => {
       </View>
     );
   };
+
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1, 
+      backgroundColor: '#E3FDF1', 
+      borderTopLeftRadius: 10,
+      borderTopRightRadius: 10
+    },
+  });
   
   export default SearchForm
