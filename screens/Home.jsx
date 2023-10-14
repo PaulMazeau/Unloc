@@ -14,6 +14,7 @@ const HomeScreen = () => {
       <Header/>
       <Text>Salut à tous c unloc</Text>
       <Button title='Aller sur la page stud' onPress={() => {navigation.navigate('Details')}}/>
+      <Button title='Aller sur la page map' onPress={() => {navigation.navigate('Map')}}/>
       <AddDateBS/>
     </View>
   );

@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, Image, TouchableOpacity  } from 'react-native';
 import BottomSheet from '@gorhom/bottom-sheet';
 import { BottomSheetScrollView } from '@gorhom/bottom-sheet';
 import { useNavigation } from '@react-navigation/native';
+import BackButton from "../assets/icons/BackButton"; // logo.svg
 
 
 export default function ResultScreen() {
@@ -21,11 +22,7 @@ export default function ResultScreen() {
         style={styles.backButton} 
         onPress={() => navigation.goBack()}
       >
-            <Image 
-                source={require('../assets/icon.png')}
-                style={styles.backIcon} 
-                resizeMode="contain" 
-            />
+          <BackButton color="black" size={40} />
       </TouchableOpacity>
       <Image
         source={require('../assets/images/studio.jpg')}
@@ -76,6 +73,8 @@ const styles = StyleSheet.create({
     top: 50,
     left: 14,
     zIndex: 5, 
+    backgroundColor: 'white',
+    borderRadius: 100,
 },
 
 backIcon: {
