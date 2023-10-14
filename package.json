@@ -9,7 +9,6 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "@expo/vector-icons": "^13.0.0",
     "@gorhom/bottom-sheet": "^4.5.1",
     "@react-native-community/datetimepicker": "^7.6.1",
     "@react-navigation/native": "^6.1.8",

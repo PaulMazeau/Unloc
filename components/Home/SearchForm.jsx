@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
 import SearchFormCalendar from './SearchFormCalendar';
+import SearchFormPlace from './SearchFormPlace';
 
 const SearchForm = () => {
     const [step, setStep] = useState(1);
@@ -18,9 +19,7 @@ const SearchForm = () => {
       <View style={styles.container}>
         {step === 1 && (
           <View>
-            <Text>Étape 1</Text>
-            {/* Votre formulaire pour l'étape 1 ici */}
-            <Button title="Suivant" onPress={nextStep} />
+            <SearchFormPlace nextStep={nextStep} previousStep={previousStep} />
           </View>
         )}
   

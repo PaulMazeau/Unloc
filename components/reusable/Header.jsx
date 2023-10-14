@@ -1,26 +1,27 @@
 import React from 'react';
 import { View, TouchableOpacity, StyleSheet, Image } from 'react-native';
-import { MaterialIcons } from '@expo/vector-icons';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import Profil from "../../assets/icons/Profil.svg";
+import Settings from "../../assets/icons/Settings.svg"
 
 const Header = ({ onProfilePress, onSettingsPress }) => {
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
       <TouchableOpacity onPress={onProfilePress}>
-        <MaterialIcons name="account-circle" size={28} color="black" />
+        <Profil width={30} height={30} color={'#001D81'}/>
       </TouchableOpacity>
 
       {/* Logo in the center */}
       <Image
-        source={require('../../assets/icon.png')}
+        source={require('../../assets/images/logo.png')}
         style={styles.logo}
         resizeMode="contain"
       />
 
       {/* Settings Icon on the right */}
       <TouchableOpacity onPress={onSettingsPress}>
-        <MaterialIcons name="settings" size={28} color="black" />
+        <Settings width={26} height={26} color={'#001D81'}/>
       </TouchableOpacity>
       </View>
     </SafeAreaView>
@@ -35,7 +36,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: 10,
   },
   logo: {
     width: 100,

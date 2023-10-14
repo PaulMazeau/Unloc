@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Image, TouchableOpacity  } from 'react-native';
 import BottomSheet from '@gorhom/bottom-sheet';
 import { BottomSheetScrollView } from '@gorhom/bottom-sheet';
 import { useNavigation } from '@react-navigation/native';
-import BackButton from "../assets/icons/BackButton"; // logo.svg
+import Cross from "../assets/icons/Cross.svg";
 
 
 export default function ResultScreen() {
@@ -22,7 +22,7 @@ export default function ResultScreen() {
         style={styles.backButton} 
         onPress={() => navigation.goBack()}
       >
-          <BackButton color="black" size={40} />
+          <Cross color="black" width={30} height={30} />
       </TouchableOpacity>
       <Image
         source={require('../assets/images/studio.jpg')}
