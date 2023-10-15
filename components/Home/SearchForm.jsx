@@ -2,10 +2,13 @@ import React, { useState } from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
 import SearchFormCalendar from './SearchFormCalendar';
 import SearchFormPlace from './SearchFormPlace';
+import { useNavigation } from '@react-navigation/native';
+import SearchFormService from './SearchFormService';
 
 const SearchForm = () => {
     const [step, setStep] = useState(1);
-  
+    const navigation = useNavigation();
+
     const nextStep = () => {
       // Validation des données de l'étape actuelle si nécessaire
       setStep((prevStep) => prevStep + 1);
@@ -14,6 +17,10 @@ const SearchForm = () => {
     const previousStep = () => {
       setStep((prevStep) => prevStep - 1);
     };
+
+    const submitForm = () => {
+      navigation.navigate('Search');
+  };
   
     return (
       <View style={styles.container}>
@@ -31,10 +38,7 @@ const SearchForm = () => {
   
         {step === 3 && (
           <View>
-            <Text>Étape 3</Text>
-            {/* Votre formulaire pour l'étape 3 ici */}
-            <Button title="Précédent" onPress={previousStep} />
-            <Button title="Terminer" onPress={() => console.log('Formulaire terminé!')} />
+            <SearchFormService submitForm={submitForm} previousStep={previousStep} />
           </View>
         )}
       </View>

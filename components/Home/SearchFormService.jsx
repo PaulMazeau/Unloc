@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
-import { Calendar } from 'react-native-calendars';
 
-export default function SearchFormCalendar({ nextStep, previousStep }) {
+export default function SearchFormService({ submitForm, previousStep }) {
     const [selectedDate, setSelectedDate] = useState('');
 
     const onDayPress = (day) => {
@@ -11,23 +10,10 @@ export default function SearchFormCalendar({ nextStep, previousStep }) {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Ou souhaites-tu rec ?</Text>
+            <Text style={styles.title}>T'as besoin de quoi ?</Text>
             
-            <Calendar
-                onDayPress={onDayPress}
-                markedDates={{
-                    [selectedDate]: {
-                        selected: true,
-                        marked: true,
-                        selectedColor: 'blue'
-                    }
-                }}
-            />
-            
-            {selectedDate && <Text>Date sélectionnée : {selectedDate}</Text>}
-
             <Button title="Précédent" onPress={previousStep} />
-            <Button title="Suivant" onPress={nextStep} />
+            <Button title="Suivant" onPress={submitForm} />
         </View>
     )
 }

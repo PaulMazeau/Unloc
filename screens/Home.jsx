@@ -2,13 +2,9 @@ import React from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
 import AddDateBS from '../components/Home/SearchFormBS';
 import Header from '../components/reusable/Header';
-import { useNavigation } from '@react-navigation/native';
 import { LinearGradient } from 'expo-linear-gradient'; 
 
 const HomeScreen = () => {
-
-  const navigation = useNavigation();
-
   return (
     <LinearGradient
     colors={['#ECFFFC', '#01DBBD']}
@@ -24,8 +20,6 @@ const HomeScreen = () => {
             <Text style={styles.title}>un studio</Text>
             <Text style={styles.title}>rapidement</Text>
         </View>
-      <Button title='Aller sur la page stud' onPress={() => {navigation.navigate('Search')}}/>
-      <Button title='Aller sur la page map' onPress={() => {navigation.navigate('Map')}}/>
       <AddDateBS/>
     </View>
     </LinearGradient>

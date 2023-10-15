@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, TextInput, Button, TouchableOpacity } from 'rea
 import Search from '../../assets/icons/Search.svg';
 import LocationIcon from '../../assets/icons/Location.svg';
 
-export default function SearchFormPlace({ nextStep, previousStep }) {
+export default function SearchFormPlace({ nextStep }) {
 
     const fetchLocation = useCallback(async () => {
         let { status } = await Location.requestForegroundPermissionsAsync();
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
         height: 48,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'red',
+        backgroundColor: '#01DBBD',
         width: '100%',
         borderRadius: 8,
         alignSelf: 'center'
