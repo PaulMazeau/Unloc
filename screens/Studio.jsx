@@ -4,9 +4,9 @@ import BottomSheet from '@gorhom/bottom-sheet';
 import { BottomSheetScrollView } from '@gorhom/bottom-sheet';
 import { useNavigation } from '@react-navigation/native';
 import Cross from "../assets/icons/Cross.svg";
+import Animated from 'react-native-reanimated';
 
-
-export default function ResultScreen() {
+export default function StudioScreen() {
   // référence pour le bottom sheet
   const bottomSheetRef = useRef(null);
   const [sheetPosition, setSheetPosition] = useState(0);
@@ -24,10 +24,11 @@ export default function ResultScreen() {
       >
           <Cross color="black" width={30} height={30} />
       </TouchableOpacity>
-      <Image
+      <Animated.Image
         source={require('../assets/images/studio.jpg')}
         style={styles.image}
         resizeMode="cover"
+        sharedTransitionTag="tag"
       />
       <BottomSheet
         ref={bottomSheetRef}

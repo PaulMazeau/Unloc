@@ -24,7 +24,7 @@ const HomeScreen = () => {
             <Text style={styles.title}>un studio</Text>
             <Text style={styles.title}>rapidement</Text>
         </View>
-      <Button title='Aller sur la page stud' onPress={() => {navigation.navigate('Details')}}/>
+      <Button title='Aller sur la page stud' onPress={() => {navigation.navigate('Search')}}/>
       <Button title='Aller sur la page map' onPress={() => {navigation.navigate('Map')}}/>
       <AddDateBS/>
     </View>

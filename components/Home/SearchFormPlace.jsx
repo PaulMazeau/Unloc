@@ -1,7 +1,23 @@
-import React from 'react';
+import React, { useCallback } from 'react';
+import * as Location from 'expo-location';
 import { StyleSheet, Text, View, TextInput, Button, TouchableOpacity } from 'react-native';
-import Search from '../../assets/icons/Search.svg'
+import Search from '../../assets/icons/Search.svg';
+import LocationIcon from '../../assets/icons/Location.svg';
+
 export default function SearchFormPlace({ nextStep, previousStep }) {
+
+    const fetchLocation = useCallback(async () => {
+        let { status } = await Location.requestForegroundPermissionsAsync();
+
+        if (status !== 'granted') {
+            console.error('Permission to access location was denied');
+            return;
+        }
+
+        let location = await Location.getCurrentPositionAsync({});
+        console.log('Latitude:', location.coords.latitude, 'Longitude:', location.coords.longitude);
+    }, []);
+
     return (
         <View style={styles.container}>
             <Text style={styles.title}>Ou souhaites-tu rec ?</Text>
@@ -12,6 +28,10 @@ export default function SearchFormPlace({ nextStep, previousStep }) {
                 />
                 <Search height={20} width={20} color={'#001D81'}/>
             </View>
+            <TouchableOpacity style={styles.NearMe} onPress={fetchLocation}>
+                <LocationIcon height={20} width={20} color={'blue'}/>
+                <Text style={styles.NearMeText}>Cherchez autour de moi</Text>
+            </TouchableOpacity>
 
             <TouchableOpacity onPress={nextStep} style={styles.Button}>
                 <Text style={styles.ButtonText}>Suivant</Text>
@@ -41,6 +61,14 @@ const styles = StyleSheet.create({
     input: {
         flex: 1,
         fontSize: 16
+    },
+    NearMe: {
+        flexDirection: 'row',
+        marginVertical: 14,
+    },
+    NearMeText: {
+        marginLeft: 8,
+        color: 'blue'
     },
     Button: {
         height: 48,
